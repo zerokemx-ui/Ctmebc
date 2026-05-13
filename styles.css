@@ -1,0 +1,192 @@
+/* =====================================================
+   Ctmebc 嘉寀萌商務中心 — Design System
+   Color: #FFC107 #FF7A00 #FF4D1A #333 #777 #FAFAFA
+   Type:  Poppins + Noto Sans TC (思源黑體)
+   ===================================================== */
+
+:root {
+  /* Brand colors */
+  --brand-yellow: #FFC107;
+  --brand-orange: #FF7A00;
+  --brand-red: #FF4D1A;
+  --ink-900: #1f1f1f;
+  --ink-800: #333333;
+  --ink-600: #555555;
+  --ink-500: #777777;
+  --ink-300: #c9c9c9;
+  --ink-200: #e6e6e6;
+  --ink-100: #f1efea;
+  --ink-50: #faf8f4;
+  --paper: #FFFFFF;
+  --cream: #FFF7EC;
+  --cream-2: #FFF1DE;
+
+  /* Brand gradient (top→bottom of orange logo card) */
+  --brand-grad: linear-gradient(135deg, #FFC107 0%, #FF7A00 45%, #FF4D1A 100%);
+  --brand-grad-soft: linear-gradient(135deg, #FFEFC6 0%, #FFD9A8 50%, #FFC2A6 100%);
+  --brand-grad-radial: radial-gradient(120% 90% at 80% 0%, #FFC107 0%, #FF7A00 35%, #FF4D1A 85%);
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(255, 122, 0, 0.05), 0 1px 3px rgba(31, 31, 31, 0.06);
+  --shadow-md: 0 4px 14px rgba(255, 122, 0, 0.08), 0 2px 6px rgba(31, 31, 31, 0.05);
+  --shadow-lg: 0 18px 44px rgba(255, 122, 0, 0.16), 0 8px 16px rgba(31, 31, 31, 0.08);
+  --shadow-orange: 0 12px 28px rgba(255, 77, 26, 0.28);
+
+  /* Type */
+  --font-sans: "Poppins", "Noto Sans TC", system-ui, -apple-system, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+
+html {
+  font-family: var(--font-sans);
+  font-feature-settings: "ss01", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  color: var(--ink-800);
+  background: var(--paper);
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: 16px;
+  line-height: 1.6;
+  background: #fff;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; }
+
+/* ---------- Type scale ---------- */
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--brand-orange);
+  font-family: "Poppins", sans-serif;
+}
+.kicker {
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink-500);
+}
+h1, h2, h3, h4 { color: var(--ink-900); font-weight: 600; line-height: 1.18; letter-spacing: -0.01em; margin: 0; }
+.h-display { font-size: clamp(40px, 5.5vw, 72px); font-weight: 700; line-height: 1.05; letter-spacing: -0.02em; }
+.h-1 { font-size: clamp(32px, 4vw, 48px); font-weight: 700; }
+.h-2 { font-size: clamp(26px, 3vw, 36px); }
+.h-3 { font-size: 22px; }
+.muted { color: var(--ink-500); }
+
+/* ---------- Layout ---------- */
+.container { max-width: 1240px; margin: 0 auto; padding: 0 32px; }
+.section { padding: 110px 0; }
+.section-tight { padding: 72px 0; }
+.grid { display: grid; gap: 24px; }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  height: 50px; padding: 0 26px;
+  border-radius: 999px;
+  font-weight: 600; font-size: 15px;
+  border: 1px solid transparent;
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+  white-space: nowrap;
+}
+.btn-primary {
+  background: var(--brand-grad);
+  color: #fff;
+  box-shadow: var(--shadow-orange);
+}
+.btn-primary:hover { transform: translateY(-1px); box-shadow: 0 16px 36px rgba(255, 77, 26, 0.36); }
+.btn-ghost {
+  background: #fff;
+  color: var(--ink-900);
+  border: 1px solid var(--ink-200);
+}
+.btn-ghost:hover { border-color: var(--brand-orange); color: var(--brand-orange); }
+.btn-dark {
+  background: var(--ink-900); color: #fff;
+}
+.btn-link {
+  color: var(--brand-red); font-weight: 600; font-size: 14px;
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.btn-link:hover { color: var(--brand-orange); }
+
+/* ---------- Chips ---------- */
+.chip {
+  display: inline-flex; align-items: center; gap: 8px;
+  height: 30px; padding: 0 14px;
+  border-radius: 999px;
+  background: rgba(255, 122, 0, 0.10);
+  color: var(--brand-red);
+  font-size: 12px; font-weight: 600;
+  letter-spacing: 0.04em;
+}
+.chip-neutral {
+  background: var(--ink-100); color: var(--ink-600);
+}
+.chip-dark { background: rgba(31,31,31,0.04); color: var(--ink-800); border: 1px solid var(--ink-200); }
+
+/* ---------- Cards ---------- */
+.card {
+  background: #fff;
+  border-radius: 20px;
+  border: 1px solid var(--ink-200);
+  padding: 28px;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: rgba(255, 122, 0, 0.4); }
+.card-cream { background: var(--cream); border-color: transparent; }
+.card-dark { background: var(--ink-900); color: #fff; border-color: transparent; }
+
+/* ---------- Brand logo block ---------- */
+.logo-wordmark {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* ---------- Image placeholder ---------- */
+.ph {
+  background:
+    repeating-linear-gradient(45deg, rgba(255,122,0,0.06) 0 10px, rgba(255,122,0,0.12) 10px 20px),
+    var(--cream);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--brand-red);
+  font-family: "Poppins", monospace;
+  font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase;
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+}
+.ph::after {
+  content: ""; position: absolute; inset: 12px; border: 1px dashed rgba(255,77,26,0.35);
+  border-radius: 10px; pointer-events: none;
+}
+.ph span { position: relative; z-index: 1; padding: 6px 12px; background: rgba(255,255,255,0.75); border-radius: 999px; }
+
+/* ---------- Section anchor offset ---------- */
+section[id] { scroll-margin-top: 90px; }
+
+/* ---------- Reveal on scroll ---------- */
+.reveal { opacity: 0; transform: translateY(16px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.in { opacity: 1; transform: none; }
+
+/* ---------- Utilities ---------- */
+.text-grad {
+  background: var(--brand-grad);
+  -webkit-background-clip: text; background-clip: text;
+  color: transparent;
+}
+.divider { height: 1px; background: var(--ink-200); }
+
+/* Hide tweaks chrome until activated */
+#tweaks-root:empty { display: none; }
